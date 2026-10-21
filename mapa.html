@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Mapa de locais de descarte confirmados em Santo André (SP).">
+  <title>Mapa de descarte · O Lixo da Minha Casa</title>
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.css">
+</head>
+<body data-page="mapa">
+  <a class="skip" href="#conteudo">Pular para o conteúdo</a>
+  <div id="site-header"></div>
+
+  <main id="conteudo">
+    <div class="container">
+      <h1>Mapa de descarte em Santo André</h1>
+      <p>Mostramos apenas locais confirmados em fontes oficiais. Cada ponto indica a fonte e a data da última verificação.</p>
+
+      <div id="mapa-aviso" aria-live="polite"></div>
+
+      <div class="controles" role="search">
+        <label for="mapa-filtro">Categoria
+          <select id="mapa-filtro"></select>
+        </label>
+        <label for="mapa-busca">Buscar endereço ou bairro
+          <input id="mapa-busca" type="search" placeholder="Ex.: Vila Guiomar">
+        </label>
+        <button class="botao" id="mapa-buscar" type="button">Buscar</button>
+        <button class="botao secundario" id="mapa-localizacao" type="button">Usar minha localização</button>
+      </div>
+      <p id="mapa-msg" class="fonte" aria-live="polite"></p>
+      <p class="legenda-mapa">Usar sua localização só acontece se você clicar no botão e permitir. Os mapas e a busca de endereço usam serviços externos de OpenStreetMap.</p>
+
+      <div id="mapa-canvas" role="region" aria-label="Mapa de locais de descarte"></div>
+
+      <h2>Locais confirmados</h2>
+      <div id="mapa-lista" aria-live="polite"></div>
+
+      <div id="mapa-avisos-gerais" class="destaque"></div>
+    </div>
+  </main>
+
+  <div id="site-footer"></div>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.js"></script>
+  <script src="js/main.js" defer></script>
+</body>
+</html>

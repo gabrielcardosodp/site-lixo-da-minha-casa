@@ -1,0 +1,179 @@
+{
+  "_instrucoes": "Para alterar um material, edite o objeto correspondente em 'materiais'. 'categoria' deve ser um dos valores de 'categorias'. 'fontes' são ids existentes em referencias.json. 'aviso' é opcional e aparece em destaque.",
+  "categorias": {
+    "reciclavel": "Reciclável",
+    "organico": "Orgânico",
+    "rejeito": "Rejeito",
+    "destinacao_especifica": "Destinação específica"
+  },
+  "materiais": [
+    {
+      "id": "papel",
+      "nome": "Papel",
+      "categoria": "reciclavel",
+      "como_separar": [
+        "Separe folhas, revistas, jornais, cadernos e envelopes.",
+        "Mantenha o papel seco. Papel molhado perde a capacidade de reciclagem."
+      ],
+      "cuidados": [
+        "Retire grampos, fitas adesivas e plásticos de capa.",
+        "Papel engordurado ou com restos de comida não é reciclável; descarte como rejeito."
+      ],
+      "fontes": ["semasa-coleta-seletiva", "documento-academico"]
+    },
+    {
+      "id": "papelao",
+      "nome": "Papelão",
+      "categoria": "reciclavel",
+      "como_separar": [
+        "Desmonte as caixas e achate-as.",
+        "Guarde em local seco e empilhado."
+      ],
+      "cuidados": [
+        "Caixas sujas de óleo, molhadas ou com restos de alimento devem ir como rejeito."
+      ],
+      "fontes": ["semasa-coleta-seletiva"]
+    },
+    {
+      "id": "plastico",
+      "nome": "Plástico",
+      "categoria": "reciclavel",
+      "como_separar": [
+        "Separe garrafas PET, embalagens de produtos de limpeza e de alimentos, sacolas e potes.",
+        "Enxágue rapidamente para retirar resíduos de alimentos."
+      ],
+      "cuidados": [
+        "Não descarte plástico com resíduos de alimentos ou óleo.",
+        "Embalagens de agrotóxicos, medicamentos e óleo lubrificante exigem destinação específica."
+      ],
+      "fontes": ["semasa-coleta-seletiva", "documento-academico"]
+    },
+    {
+      "id": "vidro",
+      "nome": "Vidro",
+      "categoria": "reciclavel",
+      "como_separar": [
+        "Separe garrafas e potes de vidro.",
+        "Lave e deixe secar."
+      ],
+      "cuidados": [
+        "Cuidado com cacos: embrulhe-os em jornal e identifique-os para o coletor.",
+        "Vidros planos (janelas, espelhos) e lâmpadas não seguem a mesma destinação; consulte a orientação do SEMASA."
+      ],
+      "fontes": ["semasa-coleta-seletiva"]
+    },
+    {
+      "id": "metal",
+      "nome": "Metal",
+      "categoria": "reciclavel",
+      "como_separar": [
+        "Separe latas de alumínio e de aço, tampinhas metálicas e pequenas peças.",
+        "Enxágue latas com restos de alimento."
+      ],
+      "cuidados": [
+        "Latas amassadas podem ser aproveitadas, mas arestas cortantes devem ser protegidas antes do descarte."
+      ],
+      "fontes": ["semasa-coleta-seletiva"]
+    },
+    {
+      "id": "organico",
+      "nome": "Restos de alimentos",
+      "categoria": "organico",
+      "como_separar": [
+        "Cascas, sobras e restos de alimentos devem ser separados dos recicláveis.",
+        "A compostagem doméstica é uma alternativa para esse material, quando possível."
+      ],
+      "cuidados": [
+        "Restos de comida não são aceitos nas Estações de Coleta visitadas pelo projeto, segundo a visita técnica.",
+        "Verifique a orientação de coleta do seu bairro no SEMASA."
+      ],
+      "fontes": ["documento-academico", "semasa-coleta-seletiva"]
+    },
+    {
+      "id": "rejeito",
+      "nome": "Rejeitos",
+      "categoria": "rejeito",
+      "como_separar": [
+        "Papel higiênico, fraldas, absorventes, papel e embalagens sujas e pequenos resíduos que não se reciclam.",
+        "Embrulhe em sacos bem fechados antes de descartar."
+      ],
+      "cuidados": [
+        "Rejeitos não devem ser misturados aos recicláveis, pois contaminam o material separado."
+      ],
+      "fontes": ["semasa-coleta-seletiva"]
+    },
+    {
+      "id": "oleo-cozinha",
+      "nome": "Óleo de cozinha usado",
+      "categoria": "destinacao_especifica",
+      "como_separar": [
+        "Guarde o óleo usado em uma garrafa PET tampada, em local seguro.",
+        "Não descarte o óleo na pia, no vaso sanitário ou no lixo comum."
+      ],
+      "cuidados": [
+        "O óleo vegetal é recebido nas Estações de Coleta e destinado a uma organização que o utiliza na produção de sabão (visita técnica, documento acadêmico).",
+        "Verifique antes de levar: o recebimento depende da unidade e de seu horário."
+      ],
+      "aviso": "Não jogue óleo na pia. Ele contamina a água e entope a rede de esgoto.",
+      "fontes": ["documento-academico"]
+    },
+    {
+      "id": "tampinhas",
+      "nome": "Tampinhas de garrafa",
+      "categoria": "destinacao_especifica",
+      "como_separar": [
+        "Guarde as tampinhas plásticas em um recipiente fechado.",
+        "Separe-as de outros materiais para facilitar a doação."
+      ],
+      "cuidados": [
+        "A destinação das tampinhas para ONGs de proteção animal é uma iniciativa do projeto. Consulte a página Participe para saber como doar."
+      ],
+      "fontes": ["documento-academico"]
+    },
+    {
+      "id": "isopor",
+      "nome": "Isopor",
+      "categoria": "destinacao_especifica",
+      "como_separar": [
+        "Não misture o isopor aos recicláveis comuns."
+      ],
+      "cuidados": [
+        "As Estações de Coleta relataram encaminhamento específico para o isopor (visita técnica, documento acadêmico).",
+        "Confirme a aceitação na unidade antes de levar."
+      ],
+      "fontes": ["documento-academico"]
+    }
+  ],
+  "erros_comuns": [
+    {
+      "erro": "Colocar recicláveis sujos ou molhados no coletor seletivo.",
+      "correcao": "Esvazie, enxágue e seque as embalagens. Material sujo pode ser descartado como rejeito."
+    },
+    {
+      "erro": "Jogar óleo de cozinha na pia.",
+      "correcao": "Guarde o óleo em uma garrafa PET tampada e leve-o a um ponto de coleta."
+    },
+    {
+      "erro": "Achar que todo material reciclável é aceito em qualquer lugar.",
+      "correcao": "Possibilidade de reciclagem não significa que o material é recebido em todo ponto. Confira a lista de materiais aceitos de cada local."
+    },
+    {
+      "erro": "Descartar restos de comida junto com os recicláveis.",
+      "correcao": "Separe os resíduos úmidos dos secos, como orienta a coleta seletiva de Santo André."
+    }
+  ],
+  "perguntas_frequentes": [
+    {
+      "pergunta": "Quando é a coleta na minha rua?",
+      "resposta": "Os dias e horários variam por bairro. Consulte o SEMASA, que disponibiliza essas informações à população."
+    },
+    {
+      "pergunta": "Onde posso entregar materiais que não saem na coleta?",
+      "resposta": "Use a página Mapa de descarte para ver os locais confirmados. Locais ainda em verificação não aparecem no mapa."
+    },
+    {
+      "pergunta": "Existe limite de descarte nas Estações de Coleta?",
+      "resposta": "Segundo a visita técnica, o limite informado pelos responsáveis é de 1 m³ por usuário por mês. Confirme a regra atual na unidade."
+    }
+  ]
+}

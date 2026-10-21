@@ -1,0 +1,68 @@
+{
+  "_instrucoes": "Cada fonte tem 'tipo': oficial | academico | complementar. 'verificado' deve ser true somente depois de você abrir o link e conferir a informação; caso contrário, use false. Não invente URLs.",
+  "referencias": [
+    {
+      "id": "documento-academico",
+      "titulo": "O Lixo da Minha Casa: diagnóstico da geração de resíduos e incentivo à reciclagem no ambiente residencial",
+      "instituicao": "Centro Universitário Fundação Santo André (FSA), Projeto Integrador I, 2026",
+      "tipo": "academico",
+      "url": null,
+      "verificado": true,
+      "observacoes": "Referência interna do trabalho acadêmico, usada como base do conteúdo."
+    },
+    {
+      "id": "semasa-coleta-seletiva",
+      "titulo": "Coleta Seletiva",
+      "instituicao": "SEMASA - Santo André (SP)",
+      "tipo": "oficial",
+      "url": "https://portais.santoandre.sp.gov.br/semasa/coleta-seletiva/",
+      "verificado": true,
+      "observacoes": "Página consultada pela equipe em 21/10/2026."
+    },
+    {
+      "id": "semasa-estacoes-de-coleta",
+      "titulo": "Estações de Coleta: endereços, horários e materiais aceitos",
+      "instituicao": "SEMASA - Santo André (SP)",
+      "tipo": "oficial",
+      "url": "https://portais.santoandre.sp.gov.br/semasa/residuos/estacoes-de-coleta/",
+      "verificado": true,
+      "observacoes": "Fonte principal do mapa. Consultada em 21/10/2026. Os horários e endereços podem mudar; confirme antes de ir."
+    },
+    {
+      "id": "semasa-gestao-residuos",
+      "titulo": "Sobre a gestão de resíduos em Santo André",
+      "instituicao": "SEMASA - Santo André (SP)",
+      "tipo": "oficial",
+      "url": null,
+      "verificado": false,
+      "observacoes": "Preencher com o link oficial depois de localizado e conferido."
+    },
+    {
+      "id": "pnrs",
+      "titulo": "Política Nacional de Resíduos Sólidos - Lei Federal nº 12.305/2010",
+      "instituicao": "Governo Federal do Brasil",
+      "tipo": "oficial",
+      "url": null,
+      "verificado": false,
+      "observacoes": "Citada no documento acadêmico. Preencher o link oficial (planalto.gov.br) após conferência."
+    },
+    {
+      "id": "onu-ods",
+      "titulo": "Objetivos de Desenvolvimento Sustentável no Brasil",
+      "instituicao": "Nações Unidas Brasil",
+      "tipo": "oficial",
+      "url": "https://brasil.un.org/pt-br/sdgs",
+      "verificado": false,
+      "observacoes": "Link citado no documento acadêmico (acesso em 23/08/2026)."
+    },
+    {
+      "id": "abc-do-abc-2019",
+      "titulo": "Coleta de lixo e limpeza pública estão entre os serviços mais bem avaliados em Santo André",
+      "instituicao": "ABC do ABC, 2019",
+      "tipo": "complementar",
+      "url": "https://abcdoabc.com.br/coleta-de-lixo-e-limpeza-publica-estao-entre-os-servicos-mais-bem-avaliados-em-santo-andre/",
+      "verificado": false,
+      "observacoes": "Notícia citada no documento acadêmico. Dado de 2019 sobre reaproveitamento; verificar atualização antes de usar."
+    }
+  ]
+}

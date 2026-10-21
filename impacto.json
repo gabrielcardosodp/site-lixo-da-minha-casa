@@ -1,0 +1,27 @@
+{
+  "_instrucoes": "Edite apenas os campos 'valor' e 'atualizado_em'. Use null enquanto o dado não existir (NÃO use 0 para 'ainda não medido'). Use números com ponto decimal, sem texto (ex.: 12.5). 'publicado' deve ser true somente quando houver resultados reais. 'atualizado_em' no formato AAAA-MM-DD.",
+  "publicado": false,
+  "atualizado_em": null,
+  "indicadores": {
+    "residuos_reciclados_kg": {
+      "rotulo": "Total de resíduos reciclados",
+      "unidade": "kg",
+      "valor": null
+    },
+    "familias_participantes": {
+      "rotulo": "Famílias participantes",
+      "unidade": "famílias",
+      "valor": null
+    },
+    "oleo_coletado_litros": {
+      "rotulo": "Óleo de cozinha coletado",
+      "unidade": "litros",
+      "valor": null
+    },
+    "tampinhas_arrecadadas": {
+      "rotulo": "Tampinhas arrecadadas",
+      "unidade": "unidades",
+      "valor": null
+    }
+  }
+}
