@@ -24,7 +24,7 @@ site-lixo-da-minha-casa/
 ├── css/style.css       Estilos globais
 ├── js/main.js          Lógica de todas as páginas
 ├── validar-dados.js    Verifica os arquivos de dados antes de publicar
-└── src/data/           ARQUIVOS QUE VOCÊ EDITA
+└──            ARQUIVOS QUE VOCÊ EDITA
     ├── impacto.json        Indicadores de resultado
     ├── pontos-coleta.json  Locais de descarte
     ├── materiais.json      Conteúdo do guia
@@ -45,9 +45,9 @@ Não abra os arquivos com duplo clique (`file://`): o navegador bloqueia o carre
 
 ## Como editar o conteúdo (sem mexer nos componentes)
 
-Regra geral: edite somente os arquivos em `src/data/`. Não é preciso alterar `js/` nem `css/` para atualizar dados.
+Regra geral: edite somente os arquivos em ``. Não é preciso alterar `js/` nem `css/` para atualizar dados.
 
-### Atualizar os indicadores de impacto (`src/data/impacto.json`)
+### Atualizar os indicadores de impacto (`impacto.json`)
 
 1. Abra o arquivo e localize o indicador, por exemplo `"oleo_coletado_litros"`.
 2. Troque `"valor": null` por um número, sem aspas. Exemplo: `"valor": 120.5`.
@@ -56,7 +56,7 @@ Regra geral: edite somente os arquivos em `src/data/`. Não é preciso alterar `
 
 Atenção: use `null` enquanto o dado não existir. Não use `0` para indicar "ainda não medido", pois isso seria apresentado como resultado.
 
-### Adicionar ou alterar um ponto de descarte (`src/data/pontos-coleta.json`)
+### Adicionar ou alterar um ponto de descarte (`pontos-coleta.json`)
 
 1. Copie um bloco existente dentro de `"pontos"` e troque os valores.
 2. Preencha `latitude` e `longitude` com números, por exemplo `-23.6600` e `-46.5300`.
@@ -66,7 +66,7 @@ Atenção: use `null` enquanto o dado não existir. Não use `0` para indicar "a
 
 Para obter coordenadas, use o Google Maps ou o OpenStreetMap: clique com o botão direito sobre o local e copie a latitude e a longitude exibidas.
 
-### Editar o guia (`src/data/materiais.json`)
+### Editar o guia (`materiais.json`)
 
 - Para alterar um material, edite o bloco correspondente dentro de `"materiais"`.
 - `"categoria"` deve ser um dos valores de `"categorias"`.
@@ -74,7 +74,7 @@ Para obter coordenadas, use o Google Maps ou o OpenStreetMap: clique com o botã
 - `"aviso"` é opcional e aparece em destaque.
 - Para perguntas e erros comuns, edite as listas `"erros_comuns"` e `"perguntas_frequentes"`.
 
-### Editar as referências (`src/data/referencias.json`)
+### Editar as referências (`referencias.json`)
 
 - Cada item tem `tipo` (`oficial`, `academico` ou `complementar`).
 - `"verificado": true` só deve ser usado depois de você abrir o link e conferir a informação.

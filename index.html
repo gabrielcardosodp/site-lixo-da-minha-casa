@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="description" content="Portal de educação ambiental sobre separação, reciclagem e descarte correto de resíduos em casa, em Santo André (SP).">
   <title>O Lixo da Minha Casa</title>
-  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="style.css">
 </head>
 <body data-page="inicio">
   <a class="skip" href="#conteudo">Pular para o conteúdo</a>
@@ -14,49 +14,75 @@
   <main id="conteudo">
     <div class="container">
       <section class="hero" aria-labelledby="titulo">
-        <h1 id="titulo">O lixo da minha casa</h1>
-        <p>Diagnóstico da geração de resíduos e incentivo à reciclagem no ambiente residencial. Aqui você aprende a separar, preparar e destinar corretamente o lixo de casa, encontra locais de descarte em Santo André e conhece os resultados do projeto quando estiverem disponíveis.</p>
-        <div class="acoes">
-          <a class="botao" href="guia.html">Aprender a reciclar</a>
-          <a class="botao secundario" href="mapa.html">Ver mapa de descarte</a>
+        <div class="texto">
+          <span class="kicker">Educação ambiental · Santo André (SP)</span>
+          <h1 id="titulo">O lixo da minha casa</h1>
+          <p class="lead">Diagnóstico da geração de resíduos e incentivo à reciclagem no ambiente residencial. Aprenda a separar, preparar e destinar corretamente o lixo de casa, encontre locais de descarte confirmados e acompanhe os resultados do projeto.</p>
+          <div class="acoes">
+            <a class="botao" href="guia.html">Aprender a reciclar <span data-icone="seta"></span></a>
+            <a class="botao secundario" href="mapa.html">Ver mapa de descarte</a>
+          </div>
+        </div>
+
+        <div class="ilustracao" aria-hidden="true">
+          <svg viewBox="0 0 320 320" role="img">
+            <circle class="anel" cx="160" cy="160" r="118"/>
+            <circle class="anel" cx="160" cy="160" r="72"/>
+            <g class="nucleo">
+              <path class="seta" d="M160 42 A118 118 0 0 1 262 101"/>
+              <path class="seta" d="M278 160 A118 118 0 0 1 218 262"/>
+              <path class="seta" d="M102 262 A118 118 0 0 1 42 160"/>
+            </g>
+            <circle class="ponto" cx="160" cy="160" r="9"/>
+            <circle class="ponto" cx="262" cy="101" r="5"/>
+            <circle class="ponto" cx="42" cy="160" r="5"/>
+          </svg>
         </div>
       </section>
 
       <h2>Três pilares</h2>
       <div class="grade">
         <article class="cartao">
-          <span class="icone" aria-hidden="true">📘</span>
+          <span class="selo" data-icone="livro"></span>
           <h3>Educação ambiental</h3>
           <p>Como separar papel, papelão, plástico, vidro e metal, o que fazer com restos de comida e como evitar erros comuns.</p>
-          <a href="guia.html">Ir para o guia</a>
+          <a class="vejamais" href="guia.html">Ir para o guia <span data-icone="seta"></span></a>
         </article>
         <article class="cartao">
-          <span class="icone" aria-hidden="true">📍</span>
+          <span class="selo" data-icone="pin"></span>
           <h3>Mapa de descarte</h3>
           <p>Locais de descarte confirmados em fontes oficiais, com filtros por categoria, busca por endereço e rota.</p>
-          <a href="mapa.html">Abrir o mapa</a>
+          <a class="vejamais" href="mapa.html">Abrir o mapa <span data-icone="seta"></span></a>
         </article>
         <article class="cartao">
-          <span class="icone" aria-hidden="true">♻️</span>
+          <span class="selo" data-icone="grafico"></span>
           <h3>Impacto ambiental</h3>
           <p>Indicadores de resíduos reciclados, famílias participantes, óleo e tampinhas coletados.</p>
-          <a href="impacto.html">Ver o painel</a>
+          <a class="vejamais" href="impacto.html">Ver o painel <span data-icone="seta"></span></a>
         </article>
       </div>
 
       <h2>Por que a reciclagem começa em casa</h2>
-      <p>A separação correta acontece no lugar onde o lixo é gerado. Quando os recicláveis chegam limpos e secos, eles têm mais chance de voltar à cadeia produtiva como matéria-prima. Os resíduos úmidos e os rejeitos, separados à parte, reduzem a contaminação do restante. Um pequeno hábito diário, repetido por muitas famílias, diminui a quantidade de lixo enviada para destinação final.</p>
-      <p>O projeto também considera os Objetivos de Desenvolvimento Sustentável 11 (cidades e comunidades sustentáveis) e 12 (consumo e produção responsáveis), da ONU.</p>
+      <div class="grade" style="grid-template-columns: 1fr 1fr;">
+        <div>
+          <p>A separação correta acontece no lugar onde o lixo é gerado. Quando os recicláveis chegam limpos e secos, eles têm mais chance de voltar à cadeia produtiva como matéria-prima.</p>
+          <p>Os resíduos úmidos e os rejeitos, separados à parte, reduzem a contaminação do restante. Um pequeno hábito diário, repetido por muitas famílias, diminui a quantidade de lixo enviada para destinação final.</p>
+        </div>
+        <div>
+          <p>O projeto também considera os Objetivos de Desenvolvimento Sustentável 11 (cidades e comunidades sustentáveis) e 12 (consumo e produção responsáveis), da ONU.</p>
+          <p class="fonte">Conteúdo educativo baseado no documento acadêmico do projeto e em fontes oficiais. Veja a lista completa em Referências.</p>
+        </div>
+      </div>
 
       <section class="destaque" aria-labelledby="campanha">
         <h2 id="campanha">Quer participar?</h2>
-        <p>Você pode separar bem os resíduos em casa e, se quiser, contribuir com a coleta de óleo de cozinha usado e de tampinhas para iniciativas sociais.</p>
-        <a class="botao" href="participe.html">Como participar</a>
+        <p>Separe bem os resíduos em casa e, se quiser, contribua com a coleta de óleo de cozinha usado e de tampinhas para iniciativas sociais.</p>
+        <a class="botao" href="participe.html">Como participar <span data-icone="seta"></span></a>
       </section>
     </div>
   </main>
 
   <div id="site-footer"></div>
-  <script src="js/main.js" defer></script>
+  <script src="main.js" defer></script>
 </body>
 </html>

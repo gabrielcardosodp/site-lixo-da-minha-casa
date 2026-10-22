@@ -5,7 +5,7 @@
 const fs = require('fs');
 const path = require('path');
 
-const pasta = path.join(__dirname, 'src', 'data');
+const pasta = __dirname;
 const erros = [];
 const avisos = [];
 
