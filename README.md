@@ -106,3 +106,12 @@ Se Node.js não estiver instalado, o script não roda; nesse caso, a publicaçã
 ## Publicação
 
 Veja o arquivo `TUTORIAL-GITHUB.md`, com o passo a passo para GitHub e Vercel.
+
+
+## Animação 2D da página inicial
+
+A página inicial conta uma história em SVG 2D controlada pela rolagem: montanha de lixo sob céu poluído, céu que clareia, famílias separando recicláveis nas lixeiras da coleta seletiva e, por fim, um ambiente limpo com vegetação.
+
+- Marcação do cenário: `index.html` (seção `data-historia`). Estilos: final de `style.css`. Lógica: bloco "História animada 2D" em `main.js`.
+- Não há 3D nem bibliotecas externas. Com "reduzir movimento" ativo no sistema, a história é exibida como quatro quadros estáticos.
+- Os textos de cada etapa ficam em `index.html`, nos blocos `.passo`.

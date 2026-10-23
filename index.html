@@ -12,35 +12,162 @@
   <div id="site-header"></div>
 
   <main id="conteudo">
-    <div class="container">
-      <section class="hero" aria-labelledby="titulo">
-        <div class="texto">
-          <span class="kicker">Educação ambiental · Santo André (SP)</span>
-          <h1 id="titulo">O lixo da minha casa</h1>
-          <p class="lead">Diagnóstico da geração de resíduos e incentivo à reciclagem no ambiente residencial. Aprenda a separar, preparar e destinar corretamente o lixo de casa, encontre locais de descarte confirmados e acompanhe os resultados do projeto.</p>
-          <div class="acoes">
-            <a class="botao" href="guia.html">Aprender a reciclar <span data-icone="seta"></span></a>
-            <a class="botao secundario" href="mapa.html">Ver mapa de descarte</a>
+    <section class="historia" data-historia aria-labelledby="titulo">
+      <p class="sr-only">Animação ilustrada em quatro etapas, controlada pela rolagem: uma grande montanha de lixo sob um céu escuro e poluído; o céu clareia e a mudança começa; famílias recolhem e separam resíduos recicláveis em lixeiras de coleta seletiva; por fim, a montanha diminui e surge um ambiente limpo, iluminado e com vegetação.</p>
+
+      <svg class="defs-cena" width="0" height="0" aria-hidden="true" focusable="false">
+        <defs>
+          <radialGradient id="gSolHalo">
+            <stop offset="0" stop-color="#fff6c8" stop-opacity=".95"/>
+            <stop offset=".35" stop-color="#ffe08a" stop-opacity=".42"/>
+            <stop offset="1" stop-color="#ffd27a" stop-opacity="0"/>
+          </radialGradient>
+          <radialGradient id="gSolNucleo">
+            <stop offset="0" stop-color="#fffbe6"/>
+            <stop offset="1" stop-color="#ffd86b"/>
+          </radialGradient>
+          <linearGradient id="gRaio" gradientUnits="userSpaceOnUse" x1="0" y1="0" x2="0" y2="-1100">
+            <stop offset="0" stop-color="#fff3c4" stop-opacity=".5"/>
+            <stop offset="1" stop-color="#fff3c4" stop-opacity="0"/>
+          </linearGradient>
+          <linearGradient id="gBruma" x1="0" y1="0" x2="0" y2="1">
+            <stop offset="0" stop-color="#f6d6a0" stop-opacity="0"/>
+            <stop offset="1" stop-color="#f6d6a0" stop-opacity=".55"/>
+          </linearGradient>
+          <path id="pilha-sil" d="M650 782 C660 742 690 732 710 702 C725 672 760 672 780 642 C800 612 830 602 850 572 C870 542 880 502 905 472 C925 442 940 422 962 397 C977 374 992 364 1007 382 C1022 402 1037 422 1052 452 C1072 482 1102 502 1122 542 C1142 577 1172 592 1197 627 C1217 657 1252 667 1272 702 C1287 732 1307 752 1317 782Z"/>
+        </defs>
+      </svg>
+
+      <div class="historia-palco">
+        <div class="palco-cena" data-cena>
+          <div class="ceu-fundo" aria-hidden="true"></div>
+          <svg class="cena" viewBox="0 0 1600 900" preserveAspectRatio="xMidYMax slice" aria-hidden="true" focusable="false">
+            <!-- Céu: sol, raios e nuvens -->
+            <g class="sol" transform="translate(1000 330)">
+              <g class="sol-pos">
+                <circle class="sol-halo" r="300" fill="url(#gSolHalo)"/>
+                <g class="raios">
+                  <path d="M0 0L-70 -1100L70 -1100Z" fill="url(#gRaio)"/>
+                  <path d="M0 0L-70 -1100L70 -1100Z" fill="url(#gRaio)" transform="rotate(30)"/>
+                  <path d="M0 0L-70 -1100L70 -1100Z" fill="url(#gRaio)" transform="rotate(60)"/>
+                  <path d="M0 0L-70 -1100L70 -1100Z" fill="url(#gRaio)" transform="rotate(90)"/>
+                  <path d="M0 0L-70 -1100L70 -1100Z" fill="url(#gRaio)" transform="rotate(120)"/>
+                  <path d="M0 0L-70 -1100L70 -1100Z" fill="url(#gRaio)" transform="rotate(150)"/>
+                  <path d="M0 0L-70 -1100L70 -1100Z" fill="url(#gRaio)" transform="rotate(180)"/>
+                  <path d="M0 0L-70 -1100L70 -1100Z" fill="url(#gRaio)" transform="rotate(210)"/>
+                  <path d="M0 0L-70 -1100L70 -1100Z" fill="url(#gRaio)" transform="rotate(240)"/>
+                  <path d="M0 0L-70 -1100L70 -1100Z" fill="url(#gRaio)" transform="rotate(270)"/>
+                  <path d="M0 0L-70 -1100L70 -1100Z" fill="url(#gRaio)" transform="rotate(300)"/>
+                  <path d="M0 0L-70 -1100L70 -1100Z" fill="url(#gRaio)" transform="rotate(330)"/>
+                </g>
+                <circle class="sol-nucleo" r="66" fill="url(#gSolNucleo)"/>
+              </g>
+            </g>
+            <g class="camada" style="--k:-20"><g class="nuvens claras" data-g="nuvens-claras"></g></g>
+            <g class="camada" style="--k:-30"><g class="nuvens escuras" data-g="nuvens-escuras"></g></g>
+
+            <!-- Horizonte: cidade, chaminés e fumaça -->
+            <g class="camada" style="--k:-36">
+              <g class="predios" data-g="predios"></g>
+              <g class="fumaca-g" data-g="fumaca"></g>
+            </g>
+
+            <!-- Colinas, turbinas eólicas e vegetação ao fundo -->
+            <g class="camada" style="--k:-56">
+              <path class="colina c1" d="M-400 690 C-150 600 120 560 360 598 C560 630 700 600 920 604 C1180 610 1340 560 1600 586 C1760 602 1860 640 2000 650 L2000 900 L-400 900Z"/>
+              <g class="turbinas" data-g="turbinas"></g>
+            </g>
+            <g class="camada" style="--k:-84">
+              <path class="colina c2" d="M-400 770 C-120 704 200 690 470 722 C700 750 900 716 1180 726 C1420 735 1640 696 2000 740 L2000 900 L-400 900Z"/>
+              <g data-g="arvores-fundo"></g>
+              <g class="passeantes" data-g="passeantes"></g>
+            </g>
+            <rect class="bruma" x="-400" y="640" width="2400" height="150" fill="url(#gBruma)"/>
+
+            <!-- Chão -->
+            <g class="camada" style="--k:0">
+              <path class="solo" d="M-400 768 C100 758 600 772 1000 766 C1400 760 1800 770 2000 764 L2000 1100 L-400 1100Z"/>
+              <path class="grama-faixa" d="M-400 768 C100 758 600 772 1000 766 C1400 760 1800 770 2000 764 L2000 794 C1500 800 1000 790 600 797 C200 803 -100 794 -400 792Z"/>
+              <path class="trilha-chao" d="M-400 832 C200 820 700 842 1100 828 C1500 814 1800 832 2000 824 L2000 864 C1700 874 1300 852 900 868 C400 882 100 862 -400 870Z"/>
+              <ellipse class="sombra-pilha" cx="985" cy="786" rx="380" ry="16"/>
+            </g>
+
+            <!-- Vegetação lateral -->
+            <g data-g="arvores"></g>
+
+            <!-- Montanha de lixo -->
+            <g class="pilha">
+              <use href="#pilha-sil" class="pilha-corpo"/>
+              <g data-g="pilha-itens"></g>
+              <use href="#pilha-sil" class="pilha-veu"/>
+            </g>
+            <g class="solto" data-g="solto"></g>
+            <g class="voa-g" data-g="voa"></g>
+
+            <!-- Coleta seletiva e personagens -->
+            <g class="lixeiras" data-g="lixeiras"></g>
+            <g data-g="pessoas"></g>
+
+            <!-- Primeiro plano -->
+            <g class="camada" style="--k:130">
+              <g class="painel-solar" transform="translate(1470 826)">
+                <path class="ps-pe" d="M46 40 L46 70 M64 38 L64 70" />
+                <path class="ps-face" d="M0 0 L92 -10 L108 36 L10 46Z"/>
+                <path class="ps-grade" d="M30 -3 L40 42 M61 -7 L71 39 M0 17 L100 6 M5 31 L103 21"/>
+              </g>
+              <g class="grama-g" data-g="grama"></g>
+              <g class="flores-g" data-g="flores"></g>
+            </g>
+            <g class="aves" data-g="aves"></g>
+          </svg>
+          <div class="cena-vinheta" aria-hidden="true"></div>
+        </div>
+
+        <nav class="trilha" aria-label="Etapas da animação">
+          <button type="button" data-ir="0"><b>01</b><span>O problema</span></button>
+          <button type="button" data-ir="1"><b>02</b><span>A mudança</span></button>
+          <button type="button" data-ir="2"><b>03</b><span>A ação</span></button>
+          <button type="button" data-ir="3"><b>04</b><span>A transformação</span></button>
+        </nav>
+
+        <div class="passos">
+          <div class="passo ativo" data-passo="0">
+            <span class="kicker">Educação ambiental · Santo André (SP)</span>
+            <h1 id="titulo">O lixo da minha casa</h1>
+            <p class="lead">Diagnóstico da geração de resíduos e incentivo à reciclagem no ambiente residencial. Aprenda a separar, preparar e destinar corretamente o lixo de casa, encontre locais de descarte confirmados e acompanhe os resultados do projeto.</p>
+            <div class="acoes">
+              <a class="botao" href="guia.html">Aprender a reciclar <span data-icone="seta"></span></a>
+              <a class="botao secundario" href="mapa.html">Ver mapa de descarte</a>
+            </div>
+          </div>
+          <div class="passo" data-passo="1" inert>
+            <span class="kicker">02 · A mudança começa</span>
+            <h2>Tudo começa dentro de casa</h2>
+            <p>A geração de resíduos está ligada ao consumo e ao descarte do dia a dia. Quando a família enxerga o que joga fora, os hábitos começam a mudar e o cenário começa a clarear.</p>
+          </div>
+          <div class="passo" data-passo="2" inert>
+            <span class="kicker">03 · A ação</span>
+            <h2>Separar é o primeiro passo</h2>
+            <p>Recicláveis secos e limpos, orgânicos e rejeitos separados no lugar onde são gerados chegam mais longe na cadeia da reciclagem e voltam a ser matéria-prima.</p>
+          </div>
+          <div class="passo" data-passo="3" inert>
+            <span class="kicker">04 · A transformação</span>
+            <h2>Pequenos hábitos, grande mudança</h2>
+            <p>Repetido por muitas famílias, um gesto diário reduz o lixo enviado para a destinação final e transforma o ambiente ao redor.</p>
+            <div class="acoes">
+              <a class="botao" href="guia.html">Aprender a reciclar <span data-icone="seta"></span></a>
+              <a class="botao secundario" href="mapa.html">Ver mapa de descarte</a>
+            </div>
           </div>
         </div>
 
-        <div class="ilustracao" aria-hidden="true">
-          <svg viewBox="0 0 320 320" role="img">
-            <circle class="anel" cx="160" cy="160" r="118"/>
-            <circle class="anel" cx="160" cy="160" r="72"/>
-            <g class="nucleo">
-              <path class="seta" d="M160 42 A118 118 0 0 1 262 101"/>
-              <path class="seta" d="M278 160 A118 118 0 0 1 218 262"/>
-              <path class="seta" d="M102 262 A118 118 0 0 1 42 160"/>
-            </g>
-            <circle class="ponto" cx="160" cy="160" r="9"/>
-            <circle class="ponto" cx="262" cy="101" r="5"/>
-            <circle class="ponto" cx="42" cy="160" r="5"/>
-          </svg>
-        </div>
-      </section>
+        <div class="dica-rolar" aria-hidden="true"><span>Role para ver a mudança</span><i></i></div>
+        <a class="historia-pular" href="#pilares">Pular animação</a>
+      </div>
+    </section>
 
-      <h2>Três pilares</h2>
+    <div class="container">
+      <h2 id="pilares">Três pilares</h2>
       <div class="grade">
         <article class="cartao">
           <span class="selo" data-icone="livro"></span>
