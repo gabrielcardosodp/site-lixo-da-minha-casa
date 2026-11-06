@@ -94,7 +94,7 @@ Se Node.js não estiver instalado, o script não roda; nesse caso, a publicaçã
 
 - Indicadores de impacto: sem valores publicados. O painel mostra "Os resultados do projeto ainda não foram publicados".
 - Pontos de descarte: as duas Estações de Coleta citadas no documento acadêmico (Vila Guiomar e Caminho do Pilar) estão cadastradas como "pendente_verificacao", sem coordenadas. Por isso, o mapa ainda não exibe marcadores. Isso deve ser mudado somente após conferência no SEMASA.
-- Referências: a maioria ainda está marcada como "Ainda não conferido".
+- Referências: todas as fontes foram abertas e conferidas em 23/10/2026 (o campo "verificado" está como true e cada uma traz uma observação com o que foi checado). Ao incluir uma fonte nova, deixe "verificado": false até abrir o link e conferir o conteúdo.
 
 ## Limitações conhecidas
 
@@ -110,8 +110,8 @@ Veja o arquivo `TUTORIAL-GITHUB.md`, com o passo a passo para GitHub e Vercel.
 
 ## Animação 2D da página inicial
 
-A página inicial conta uma história em SVG 2D controlada pela rolagem: montanha de lixo sob céu poluído, céu que clareia, famílias separando recicláveis nas lixeiras da coleta seletiva e, por fim, um ambiente limpo com vegetação.
+A página inicial conta uma história em pixel art 2D (canvas de baixa resolução ampliado sem suavização) controlada pela rolagem: montanha de lixo sob céu poluído, céu que clareia, famílias separando recicláveis nas lixeiras da coleta seletiva e, por fim, um ambiente limpo com vegetação.
 
-- Marcação do cenário: `index.html` (seção `data-historia`). Estilos: final de `style.css`. Lógica: bloco "História animada 2D" em `main.js`.
-- Não há 3D nem bibliotecas externas. Com "reduzir movimento" ativo no sistema, a história é exibida como quatro quadros estáticos.
+- Marcação: `index.html` (seção `data-historia`, com um `<canvas>`). Estilos: final de `style.css`. Desenho do cenário, dos bonecos em pixels e da animação: bloco "História animada em pixel art" em `main.js`.
+- Não há 3D nem bibliotecas externas. Com "reduzir movimento" ativo no sistema, a história é exibida como quatro quadros estáticos em pixel art.
 - Os textos de cada etapa ficam em `index.html`, nos blocos `.passo`.

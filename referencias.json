@@ -33,18 +33,18 @@
       "titulo": "Sobre a gestão de resíduos em Santo André",
       "instituicao": "SEMASA - Santo André (SP)",
       "tipo": "oficial",
-      "url": null,
-      "verificado": false,
-      "observacoes": "Preencher com o link oficial depois de localizado e conferido."
+      "url": "https://portais.santoandre.sp.gov.br/semasa/residuos/",
+      "verificado": true,
+      "observacoes": "Página consultada em 23/10/2026. Informa que a gestão de resíduos passou ao SEMASA em 1999, que os serviços seguem a Lei Federal 12.305/2010 e que existe a Política Municipal de Gestão Integrada de Resíduos Sólidos (Decreto 16.310/2012)."
     },
     {
       "id": "pnrs",
       "titulo": "Política Nacional de Resíduos Sólidos - Lei Federal nº 12.305/2010",
       "instituicao": "Governo Federal do Brasil",
       "tipo": "oficial",
-      "url": null,
-      "verificado": false,
-      "observacoes": "Citada no documento acadêmico. Preencher o link oficial (planalto.gov.br) após conferência."
+      "url": "https://www.planalto.gov.br/ccivil_03/_ato2007-2010/2010/lei/l12305.htm",
+      "verificado": true,
+      "observacoes": "Texto da lei conferido no site do Planalto em 23/10/2026."
     },
     {
       "id": "onu-ods",
@@ -52,8 +52,8 @@
       "instituicao": "Nações Unidas Brasil",
       "tipo": "oficial",
       "url": "https://brasil.un.org/pt-br/sdgs",
-      "verificado": false,
-      "observacoes": "Link citado no documento acadêmico (acesso em 23/08/2026)."
+      "verificado": true,
+      "observacoes": "Página consultada em 23/10/2026. Apresenta os 17 Objetivos de Desenvolvimento Sustentável, incluindo o ODS 11 (Cidades e comunidades sustentáveis) e o ODS 12 (Consumo e produção responsáveis)."
     },
     {
       "id": "abc-do-abc-2019",
@@ -61,8 +61,8 @@
       "instituicao": "ABC do ABC, 2019",
       "tipo": "complementar",
       "url": "https://abcdoabc.com.br/coleta-de-lixo-e-limpeza-publica-estao-entre-os-servicos-mais-bem-avaliados-em-santo-andre/",
-      "verificado": false,
-      "observacoes": "Notícia citada no documento acadêmico. Dado de 2019 sobre reaproveitamento; verificar atualização antes de usar."
+      "verificado": true,
+      "observacoes": "Notícia de 2019 citada no documento acadêmico. O mesmo conteúdo foi conferido em 23/10/2026 na versão publicada pela Prefeitura de Santo André (18/10/2019): índice de reaproveitamento de 30% e crescimento de mais de 140%. É um dado de 2019; verificar atualização antes de usar."
     }
   ]
 }

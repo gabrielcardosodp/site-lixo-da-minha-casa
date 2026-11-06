@@ -833,7 +833,6 @@ body:not([data-page="inicio"]) main .container > h1 + p {
   overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; border: 0;
 }
 body[data-page="inicio"] main { padding-top: 0; }
-.defs-cena { position: absolute; width: 0; height: 0; overflow: hidden; }
 
 .historia { position: relative; --cab: 69px; background: #0b0e12; margin-bottom: 1rem; }
 .historia.ativa { height: 560vh; }
@@ -843,78 +842,13 @@ body[data-page="inicio"] main { padding-top: 0; }
   height: calc(100vh - var(--cab)); height: calc(100svh - var(--cab)); min-height: 0;
 }
 
-/* Cena */
-.palco-cena { position: absolute; inset: 0; overflow: hidden; }
-.ceu-fundo {
-  position: absolute; inset: 0;
-  background: linear-gradient(180deg, rgb(15,18,22) 0%, rgb(38,42,48) 46%, rgb(88,82,77) 76%);
+/* Cena em pixel art: o canvas tem baixa resolução e é ampliado sem suavização */
+.palco-cena { position: absolute; inset: 0; overflow: hidden; background: #0f1216; }
+.cena-pixel {
+  position: absolute; left: 50%; bottom: 0; display: block; max-width: none;
+  image-rendering: pixelated; image-rendering: crisp-edges; image-rendering: -moz-crisp-edges;
 }
-.cena { position: absolute; inset: 0; width: 100%; height: 100%; display: block; max-width: none; }
-.cena-vinheta {
-  position: absolute; inset: 0; pointer-events: none;
-  background:
-    radial-gradient(120% 90% at 50% 45%, transparent 52%, rgba(3, 6, 8, .55) 100%),
-    linear-gradient(90deg, rgba(5, 10, 8, .55) 0%, rgba(5, 10, 8, 0) 46%);
-}
-
-/* Os valores que mudam com a rolagem são gravados pelo JavaScript direto nos elementos;
-   aqui ficam apenas os estados iniciais (cena do problema). */
-.sol { opacity: 0; }
-.sol-pos { transform: translateY(520px); }
-.raios { opacity: 0; }
-.sol-halo { opacity: .25; }
-.nuvens.claras { opacity: 0; }
-.predios { fill: #22262b; }
-.chamine { fill: #181b1f; }
-.chamine-faixa { fill: #8c3b2e; opacity: .8; }
-.fumaca-bola { fill: #3a3e44; opacity: .3; }
-.colina.c1 { fill: #2e3235; }
-.colina.c2 { fill: #282c2e; }
-.turbinas { opacity: 0; }
-.turbinas .torre, .turbinas .helice path, .turbinas .helice circle { fill: #f4f8f5; }
-.turbinas .helice { transform-origin: 0 0; }
-.bruma { opacity: 0; }
-.passeantes { opacity: 0; }
-.solo { fill: #201f1d; }
-.grama-faixa { fill: #2d2f2a; }
-.trilha-chao { fill: #3a3836; opacity: .8; }
-.sombra-pilha { fill: #000; opacity: .28; transform-box: fill-box; transform-origin: center; }
-.arvore { transform: scale(0); }
-.pilha { transform-origin: 985px 782px; }
-.pilha-corpo { fill: #2a2c2f; }
-.pilha-veu { fill: #05070a; opacity: .34; pointer-events: none; }
-.tremula { transform-origin: 0 0; }
-.voa-g { opacity: .9; }
-.lixeiras { opacity: 0; transform: translateY(46px); }
-.painel-solar { opacity: 0; }
-.ps-face { fill: #1e4a7a; stroke: #bcd6ee; stroke-width: 2; }
-.ps-grade, .ps-pe { fill: none; stroke: #bcd6ee; stroke-width: 1.4; opacity: .8; }
-.ps-pe { stroke: #5c6770; stroke-width: 3; opacity: 1; }
-.grama-g { opacity: 0; transform: translateY(34px); stroke: #2d2f2a; }
-.lamina path { fill: none; stroke: inherit; stroke-width: 4; stroke-linecap: round; }
-.flores-g { opacity: 0; }
-.aves { opacity: 0; }
-.ave path { fill: none; stroke: #17352c; stroke-width: 2.6; stroke-linecap: round; transform-box: fill-box; transform-origin: center top; }
-.ave { transform: translate(-260px, 0); }
-
-@keyframes deriva { from { transform: translateX(-70px); } to { transform: translateX(70px); } }
-@keyframes fumaca-sobe {
-  0% { transform: translateY(0) scale(.5); opacity: 0; }
-  15% { opacity: .55; }
-  100% { transform: translateY(-230px) scale(2.3); opacity: 0; }
-}
-@keyframes tremula { from { transform: rotate(-4deg); } to { transform: rotate(4deg); } }
-@keyframes voa {
-  0% { transform: translate(-260px, var(--y)) rotate(0deg); }
-  25% { transform: translate(380px, calc(var(--y) - 70px)) rotate(150deg); }
-  50% { transform: translate(940px, calc(var(--y) + 40px)) rotate(300deg); }
-  75% { transform: translate(1480px, calc(var(--y) - 60px)) rotate(450deg); }
-  100% { transform: translate(2000px, calc(var(--y) + 10px)) rotate(600deg); }
-}
-@keyframes balanca { from { transform: rotate(-5deg); } to { transform: rotate(5deg); } }
-@keyframes bater { from { transform: scaleY(1); } to { transform: scaleY(.35); } }
-
-.historia-palco.pausado *, .historia-palco.pausado *::before { animation-play-state: paused !important; }
+.cena-pixel { image-rendering: pixelated; }
 
 /* Painéis de texto */
 .passos { position: absolute; inset: 0; pointer-events: none; }
@@ -924,10 +858,11 @@ body[data-page="inicio"] main { padding-top: 0; }
   top: clamp(4.4rem, 12vh, 7.2rem);
   width: min(610px, calc(100% - 2rem));
   padding: clamp(1.2rem, 2.4vw, 1.9rem);
-  border-radius: 26px;
-  background: linear-gradient(150deg, rgba(8, 28, 21, .8), rgba(8, 22, 17, .7));
-  border: 1px solid rgba(220, 255, 205, .16);
-  box-shadow: 0 24px 60px rgba(0, 0, 0, .3), inset 0 1px 0 rgba(255, 255, 255, .08);
+  border-radius: 0;
+  background: #0d241b;
+  border: 4px solid #0a1510;
+  box-shadow: inset 0 0 0 3px #2f6f4c, inset 0 0 0 6px #123a29;
+  clip-path: polygon(0 8px, 8px 8px, 8px 0, calc(100% - 8px) 0, calc(100% - 8px) 8px, 100% 8px, 100% calc(100% - 8px), calc(100% - 8px) calc(100% - 8px), calc(100% - 8px) 100%, 8px 100%, 8px calc(100% - 8px), 0 calc(100% - 8px));
   opacity: 0; transform: translateY(18px) scale(.985);
   transition: opacity .6s var(--ease), transform .6s var(--ease);
   pointer-events: none;
@@ -935,51 +870,59 @@ body[data-page="inicio"] main { padding-top: 0; }
 .passo.ativo { opacity: 1; transform: none; pointer-events: auto; }
 .passo > * { margin-top: 0; }
 .passo .kicker {
-  color: #d8f58c; background: rgba(216, 245, 140, .1); border: 1px solid rgba(216, 245, 140, .26);
-  padding: .4rem .8rem; border-radius: 999px; letter-spacing: .08em; margin-bottom: .9rem;
+  color: #0d241b; background: #d8f58c; border: 0; border-radius: 0;
+  font-family: ui-monospace, "SFMono-Regular", Menlo, Consolas, "Courier New", monospace; font-weight: 800;
+  padding: .35rem .7rem; letter-spacing: .06em; margin-bottom: .9rem;
 }
-.passo h1 { color: #fff; font-size: clamp(2.5rem, 5.4vw, 4.4rem); line-height: .99; letter-spacing: -.06em; margin: .2rem 0 1rem; max-width: 12ch; }
-.passo h2 { color: #fff; font-size: clamp(1.7rem, 3.4vw, 2.5rem); line-height: 1.06; letter-spacing: -.045em; margin: .2rem 0 .8rem; }
+.passo h1 { color: #fff; font-size: clamp(2.5rem, 5.4vw, 4.4rem); line-height: .99; letter-spacing: -.06em; margin: .2rem 0 1rem; max-width: 12ch; text-shadow: 4px 4px 0 #0a1510; }
+.passo h2 { color: #fff; font-size: clamp(1.7rem, 3.4vw, 2.5rem); line-height: 1.06; letter-spacing: -.045em; margin: .2rem 0 .8rem; text-shadow: 3px 3px 0 #0a1510; }
 .passo h2::after { display: none !important; }
 .passo p { color: #d8e9dc; font-size: clamp(.98rem, 1.4vw, 1.1rem); margin-bottom: 0; }
 .passo .acoes { display: flex; flex-wrap: wrap; gap: .8rem; margin-top: 1.5rem; }
-.passo .botao { color: #123b29; background: #d8f58c; box-shadow: 0 8px 22px rgba(0, 0, 0, .18); padding: .85rem 1.3rem; }
-.passo .botao:hover { background: #e8ffb0; color: #0d2c1e; }
-.passo .botao.secundario { color: #f2fff2; background: rgba(255, 255, 255, .07); border-color: rgba(231, 255, 230, .35); box-shadow: none; }
-.passo .botao.secundario:hover { background: rgba(255, 255, 255, .16); color: #fff; }
+.passo .botao {
+  color: #0d241b; background: #d8f58c; border: 3px solid #0a1510; border-radius: 0;
+  box-shadow: 4px 4px 0 #0a1510; padding: .75rem 1.15rem; font-weight: 800; transition: background .15s;
+}
+.passo .botao:hover { background: #ecffb8; color: #0d241b; transform: translate(-1px, -1px); box-shadow: 5px 5px 0 #0a1510; }
+.passo .botao:active { transform: translate(3px, 3px); box-shadow: 1px 1px 0 #0a1510; }
+.passo .botao.secundario { color: #f2fff2; background: #1c4a34; border-color: #0a1510; }
+.passo .botao.secundario:hover { background: #26603f; color: #fff; }
 
 /* Trilha de etapas */
 .trilha {
   position: absolute; top: .9rem; left: 50%; transform: translateX(-50%);
-  display: flex; gap: .2rem; padding: .3rem;
-  border-radius: 999px;
-  background: rgba(8, 22, 17, .72); border: 1px solid rgba(220, 255, 205, .16);
+  display: flex; gap: 3px; padding: 3px;
+  background: #0a1510; border: 0;
+  box-shadow: 0 0 0 3px #2f6f4c;
   z-index: 3; max-width: calc(100% - 1.4rem);
 }
 .trilha button {
   --f: 0;
   position: relative; display: inline-flex; align-items: center; gap: .5rem;
-  border: 0; background: transparent; color: rgba(232, 245, 235, .66);
-  font: inherit; font-size: .74rem; font-weight: 600; letter-spacing: .08em; text-transform: uppercase;
-  padding: .5rem .85rem; border-radius: 999px; cursor: pointer; overflow: hidden;
-  transition: color .3s var(--ease), background .3s var(--ease);
+  border: 0; background: #123a29; color: rgba(232, 245, 235, .78); border-radius: 0;
+  font-family: ui-monospace, "SFMono-Regular", Menlo, Consolas, "Courier New", monospace;
+  font-size: .72rem; font-weight: 800; letter-spacing: .06em; text-transform: uppercase;
+  padding: .5rem .8rem; cursor: pointer; overflow: hidden;
 }
-.trilha button b { font-variant-numeric: tabular-nums; color: #d8f58c; font-weight: 700; }
+.trilha button b { font-variant-numeric: tabular-nums; color: #d8f58c; font-weight: 800; }
 .trilha button::after {
-  content: ""; position: absolute; left: .85rem; right: .85rem; bottom: .22rem; height: 2px; border-radius: 2px;
-  background: linear-gradient(90deg, #a9dc54, #5fd08a); transform: scaleX(var(--f)); transform-origin: left;
+  content: ""; position: absolute; left: 0; right: 0; bottom: 0; height: 3px;
+  background: #d8f58c; transform: scaleX(var(--f)); transform-origin: left;
 }
-.trilha button:hover { color: #fff; background: rgba(255, 255, 255, .08); }
-.trilha button.atual { color: #fff; background: rgba(216, 245, 140, .12); }
-.trilha button:focus-visible { outline-color: #d8f58c; }
+.trilha button:hover { color: #fff; background: #1c4a34; }
+.trilha button.atual { color: #0d241b; background: #d8f58c; }
+.trilha button.atual b { color: #0d241b; }
+.trilha button.atual::after { background: #0d241b; }
+.trilha button:focus-visible { outline: 3px solid #fff; outline-offset: 1px; }
 
 .dica-rolar {
   position: absolute; left: 50%; bottom: 1.1rem; transform: translateX(-50%);
   display: flex; flex-direction: column; align-items: center; gap: .45rem;
-  font-size: .72rem; letter-spacing: .14em; text-transform: uppercase; color: rgba(240, 250, 242, .85);
-  text-shadow: 0 1px 8px rgba(0, 0, 0, .6); transition: opacity .5s var(--ease); z-index: 3;
+  font-family: ui-monospace, "SFMono-Regular", Menlo, Consolas, "Courier New", monospace; font-weight: 800;
+  font-size: .72rem; letter-spacing: .14em; text-transform: uppercase; color: #fff;
+  text-shadow: 2px 2px 0 #0a1510; transition: opacity .5s var(--ease); z-index: 3;
 }
-.dica-rolar i { width: 20px; height: 32px; border: 1.6px solid rgba(240, 250, 242, .8); border-radius: 12px; position: relative; }
+.dica-rolar i { width: 20px; height: 32px; border: 3px solid #fff; border-radius: 0; box-shadow: 2px 2px 0 #0a1510; position: relative; }
 .dica-rolar i::after { content: ""; position: absolute; left: 50%; top: 6px; width: 3px; height: 7px; margin-left: -1.5px; border-radius: 2px; background: #d8f58c; }
 .dica-rolar:not(.some) i::after { animation: rola 1.8s ease-in-out infinite; }
 .dica-rolar.some { opacity: 0; pointer-events: none; }
@@ -987,13 +930,13 @@ body[data-page="inicio"] main { padding-top: 0; }
 
 .historia-pular {
   position: absolute; right: 1rem; bottom: 1rem; z-index: 3;
-  font-size: .8rem; font-weight: 600; color: #eaf7ec; text-decoration: none;
-  padding: .5rem .9rem; border-radius: 999px;
-  background: rgba(8, 22, 17, .72); border: 1px solid rgba(220, 255, 205, .2);
+  font-family: ui-monospace, "SFMono-Regular", Menlo, Consolas, "Courier New", monospace; font-size: .76rem; font-weight: 800; color: #eaf7ec; text-decoration: none;
+  padding: .5rem .9rem; border-radius: 0;
+  background: #0a1510; border: 0; box-shadow: 0 0 0 3px #2f6f4c;
   opacity: .0; transform: translateY(6px); transition: opacity .3s var(--ease), transform .3s var(--ease), background .3s var(--ease);
 }
 .historia-palco:hover .historia-pular, .historia-pular:focus-visible { opacity: 1; transform: none; }
-.historia-pular:hover { background: rgba(255, 255, 255, .16); color: #fff; }
+.historia-pular:hover { background: #1c4a34; color: #fff; }
 
 @media (hover: none) { .historia-pular { opacity: .85; transform: none; } }
 
@@ -1017,8 +960,8 @@ body[data-page="inicio"] main { padding-top: 0; }
 .quadro { display: grid; grid-template-columns: 1.15fr .85fr; gap: 2rem; align-items: center; }
 .quadro:nth-child(even) .quadro-cena { order: 2; }
 .quadro-cena {
-  position: relative; aspect-ratio: 16 / 10; border-radius: 28px; overflow: hidden;
-  box-shadow: 0 22px 54px rgba(12, 61, 37, .18); border: 1px solid rgba(255, 255, 255, .2);
+  position: relative; aspect-ratio: 16 / 10; border-radius: 0; overflow: hidden;
+  box-shadow: 0 0 0 4px #0a1510, 8px 8px 0 4px rgba(10, 21, 16, .3);
 }
 .quadro-texto h1 { max-width: 14ch; font-size: clamp(2.4rem, 5vw, 3.8rem); line-height: 1; letter-spacing: -.05em; }
 .quadro-texto h2 { margin-top: .2rem; }
@@ -1030,3 +973,6 @@ body[data-page="inicio"] main { padding-top: 0; }
   .passo { transition: none; }
   .historia-pular { opacity: 1; transform: none; }
 }
+
+/* Links e textos longos (URLs) quebram de linha em vez de estourar a tela */
+main a, main p, main li, main dd, main td { overflow-wrap: anywhere; }
